@@ -1,0 +1,89 @@
+<div class="step-text">
+<h5 id="description">Description</h5>
+<p>Imagine you are a data scientist and you're currently working with the data for local hospitals. You have several files with information about patients from different districts. Sometimes, the data is split into many datasets or may contain empty or invalid values. The first step is to preprocess the data before the analysis: merge the files into one, delete empty or incorrect rows, fill the missing values, and so on.</p>
+<p>In this stage, you will deal with datasets that contain information about patients from three hospitals: a general, a prenatal, and a sports one. You need to upload the data from the hidden <code class="language-python">test</code> directory of the project for further processing.</p>
+<h5 id="objectives">Objectives</h5>
+<p>In this stage, your program should:</p>
+<ol>
+<li>After all the libraries imports write the following line of code:
+	<pre><code class="language-python">pd.set_option('display.max_columns', 8)</code></pre>
+	It sets the number of columns, which <code class="language-python">pandas</code> lets to display in the terminal. Unfortunately, this number differs occasionally and causes problems in the tests, so we need to fix the number.</li>
+<li>Read 3 CSV files containing the datasets</li>
+<li>Print the first 20 rows of each DataFrame. Use the following order: <code class="language-python">general</code>, <code class="language-python">prenatal</code>, <code class="language-python">sports</code></li>
+</ol>
+<p>If you have corrupted CSV files, please <a href="https://stepik.org/media/attachments/lesson/467509/files.zip" rel="noopener noreferrer nofollow" target="_blank">download them</a> and unzip in your working directory. You need to copy all three file paths to use them when loading datasets in your program.</p>
+<h5 id="example">Example</h5>
+<p>The input is 3 CSV files, <code class="language-python">test/general.csv</code>, <code class="language-python">test/prenatal.csv</code>, and <code class="language-python">test/sports.csv</code>. As mentioned above, the <code class="language-python">test</code> directory is hidden. Don't worry that you can't see it, just use the paths from the previous sentence. If it doesn't work try to download data as described in Objectives.</p>
+<p>The output is the following:<br/>
+(This data is given for reference only, the actual values might be different)</p>
+<pre><code class="language-no-highlight">    Unnamed: 0  hospital  gender   age  ...    mri  xray  children  months
+8            0  Brighton    girl   NaN  ...    NaN    no       NaN     2.0
+12           1  Brighton  female  16.0  ...    NaN    no       2.0     2.0
+13           2  Brighton    girl  64.0  ...  185.0   yes       0.0     1.0
+17           3  Brighton     NaN  33.0  ...    NaN   NaN       2.0     2.0
+19           4  Brighton     NaN   NaN  ...  168.0   NaN       1.0     1.0
+27           5  Brighton  female  30.0  ...   85.0   NaN       1.0     NaN
+29           6  Brighton  female  51.0  ...    NaN    no       0.0     NaN
+36           7  Brighton     NaN  29.0  ...    NaN   NaN       1.0     1.0
+41           8  Brighton  female   NaN  ...   55.0   yes       NaN     NaN
+45           9  Brighton     man  24.0  ...   53.0   NaN       3.0     NaN
+50          10  Brighton  female  37.0  ...  155.0    no       NaN     2.0
+51          11  Brighton    girl   NaN  ...    NaN   yes       NaN     2.0
+52          12  Brighton    girl  40.0  ...   59.0    no       1.0     2.0
+55          13  Brighton     NaN  56.0  ...    NaN    no       2.0     2.0
+56          14  Brighton     man  41.0  ...   52.0   yes       NaN     NaN
+61          15  Brighton     NaN  45.0  ...  144.0   NaN       1.0     1.0
+64          16  Brighton  female  59.0  ...   71.0   NaN       3.0     1.0
+74          17  Brighton     NaN  54.0  ...   85.0    no       1.0     1.0
+75          18  Brighton     NaN  48.0  ...   42.0    no       NaN     NaN
+77          19  Brighton     NaN  26.0  ...  200.0   NaN       3.0     NaN
+
+[20 rows x 15 columns]
+    Unnamed: 0   hospital  gender   age  ...    mri  xray  children  months
+0            0  Cambridge     boy  52.0  ...  151.0   yes       NaN     2.0
+2            1  Cambridge  female  60.0  ...  141.0   yes       0.0     2.0
+4            2  Cambridge     NaN   NaN  ...  135.0   yes       2.0     1.0
+5            3  Cambridge  female   NaN  ...   97.0   yes       NaN     1.0
+11           4  Cambridge     NaN   NaN  ...   69.0    no       0.0     1.0
+16           5  Cambridge     NaN  33.0  ...    NaN    no       1.0     1.0
+21           6  Cambridge    girl  21.0  ...   49.0   yes       2.0     2.0
+26           7  Cambridge     boy   NaN  ...  137.0   NaN       3.0     1.0
+32           8  Cambridge     NaN  48.0  ...  341.0   yes       1.0     NaN
+35           9  Cambridge    girl   NaN  ...  102.0   NaN       1.0     2.0
+37          10  Cambridge     boy  55.0  ...  276.0   yes       NaN     1.0
+39          11  Cambridge     NaN  46.0  ...    NaN    no       3.0     2.0
+49          12  Cambridge     man  51.0  ...  142.0   yes       3.0     2.0
+58          13  Cambridge     man  29.0  ...    NaN    no       NaN     NaN
+62          14  Cambridge     boy  64.0  ...    NaN    no       NaN     1.0
+66          15  Cambridge     boy   NaN  ...  150.0   yes       2.0     1.0
+68          16  Cambridge  female   NaN  ...  160.0   NaN       1.0     1.0
+70          17  Cambridge     NaN   NaN  ...   48.0   NaN       2.0     1.0
+72          18  Cambridge     man  56.0  ...    NaN    no       2.0     2.0
+83          19  Cambridge  female  30.0  ...    NaN   yes       2.0     1.0
+
+[20 rows x 15 columns]
+    Unnamed: 0  hospital  gender   age  ...    mri  xray  children  months
+1            0    Oxford     boy  52.0  ...   75.0   yes       2.0     1.0
+7            1    Oxford     NaN   NaN  ...   63.0    no       0.0     NaN
+9            2    Oxford     man  18.0  ...  310.0   yes       0.0     2.0
+10           3    Oxford     boy  56.0  ...    NaN    no       NaN     NaN
+14           4    Oxford    girl   NaN  ...    NaN    no       1.0     NaN
+23           5    Oxford     boy  61.0  ...  245.0   yes       0.0     NaN
+25           6    Oxford     NaN  15.0  ...    NaN   yes       1.0     NaN
+33           7    Oxford     man  43.0  ...   87.0   NaN       0.0     1.0
+38           8    Oxford    girl   NaN  ...  252.0    no       1.0     1.0
+43           9    Oxford     man  26.0  ...   92.0    no       NaN     2.0
+44          10    Oxford     NaN  54.0  ...  259.0   yes       NaN     1.0
+48          11    Oxford     NaN   NaN  ...   75.0   yes       1.0     1.0
+54          12    Oxford     NaN  20.0  ...  182.0   yes       2.0     NaN
+57          13    Oxford  female   NaN  ...   37.0   yes       2.0     NaN
+60          14    Oxford  female   NaN  ...    NaN   yes       1.0     2.0
+65          15    Oxford     NaN  49.0  ...  163.0   NaN       2.0     2.0
+67          16    Oxford     NaN   NaN  ...   97.0    no       3.0     1.0
+69          17    Oxford  female   NaN  ...  178.0    no       1.0     1.0
+71          18    Oxford  female  66.0  ...  270.0   yes       3.0     2.0
+73          19    Oxford  female   NaN  ...    NaN   NaN       NaN     NaN
+
+[20 rows x 15 columns]
+</code></pre>
+</div>

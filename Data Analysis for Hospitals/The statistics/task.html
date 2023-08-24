@@ -1,0 +1,27 @@
+<div class="step-text">
+<h5 id="description">Description</h5>
+<p>You have cleared your dataset of empty rows and values. Some values have also been corrected, and now we can start a comprehensive study of our data. In this stage, we will find the main statistical characteristics of our data, consider data distributions, and so on.</p>
+<p>Answer the following questions and output the answers in the specified format.</p>
+<ol>
+<li>Which hospital has the highest number of patients?</li>
+<li>What share of the patients in the general hospital suffers from stomach-related issues? Round the result to the third decimal place.</li>
+<li>What share of the patients in the sports hospital suffers from dislocation-related issues? Round the result to the third decimal place.</li>
+<li>What is the difference in the median ages of the patients in the general and sports hospitals?</li>
+<li>After data processing at the previous stages, the <code class="java">blood_test</code> column has three values: <code class="java">t</code> = a blood test was taken, <code class="java">f</code> = a blood test wasn't taken, and <code class="java">0</code> = there is no information. In which hospital the blood test was taken the most often (there is the biggest number of <code class="java">t</code> in the <code class="java">blood_test</code> column among all the hospitals)? How many blood tests were taken?</li>
+</ol>
+<p><b>Tip:</b> One of the methods to solve the last problem is <code class="java">pandas.pivot_table()</code> . Set <code class="java">aggfunc='count'</code> and read <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html" rel="noopener noreferrer nofollow" target="_blank">documentation</a> to set other parameters.</p>
+<h5 id="objectives">Objectives</h5>
+<p>Use the DataFrame from the previous stage. It's not necessary here to set the maximum number of columns to display. The fourth stage requires completing one step:</p>
+<p>Answer the 1-5 questions using the <code class="java">pandas</code> library methods. Output the answers on the separate lines in the format given in the Example section.</p>
+<p>If you have corrupted CSV files, please <a href="https://stepik.org/media/attachments/lesson/467509/files.zip" rel="noopener noreferrer nofollow" target="_blank">download them</a> and unzip in your working directory.</p>
+<h5 id="example">Example</h5>
+<p>The input is 3 CSV files, <code class="java">test/general.csv</code>, <code class="java">test/prenatal.csv</code>, and <code class="java">test/sports.csv</code>.</p>
+<p>The output: the following answers are given for reference only, the actual answers might be different.</p>
+<pre><code class="language-no-highlight">The answer to the 1st question is Brighton
+The answer to the 2nd question is 0.645
+The answer to the 3rd question is 0.873
+The answer to the 4th question is 35
+The answer to the 5th question is Oxford, 178 blood tests
+
+</code></pre>
+</div>
