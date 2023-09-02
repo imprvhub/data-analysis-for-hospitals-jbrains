@@ -1,4 +1,4 @@
-Data Analysis for Hospitals (JBrains)
+Data Analysis for Hospitals (JetBrains)
 
 Learning Outcomes
 
